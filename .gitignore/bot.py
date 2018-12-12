@@ -8,7 +8,7 @@ import colorsys
 import random
 import json
  
-client = Bot(description="MyBot is best", command_prefix="mv!", pm_help = False)
+client = Bot(description="MyBot is best", command_prefix="^", pm_help = False)
 client.remove_command('help')
 
 
@@ -17,8 +17,8 @@ async def on_ready():
     print('Logged in as '+client.user.name+' (ID:'+client.user.id+') | Connected to '+str(len(client.servers))+' servers | Connected to '+str(len(set(client.get_all_members())))+' users')
     print('--------')
     print('--------')
-    print('Started SciBot')
-    print('Created by Utkarsh')
+    print('Started BlackfoxBot')
+    print('Created by Biswajit')
  
  
 @client.event
@@ -95,15 +95,15 @@ async def on_message(message):
     user = message.author
     if message.author.bot:
       return
-    if message.content.startswith('mv!say'):
+    if message.content.startswith('^say'):
       return
     else:
-      if message.content.startswith('mv!donate'):
+      if message.content.startswith('^donate'):
           msg = '**Support us by donating us;** https://www.paypal.me/RVerma181'
           await client.send_message(message.channel, msg)
           
       if 'Who is your creator <@515403515217313795>?' in message.content:
-          msg = 'DarkLegend#3807 is my creator'.format(message)
+          msg = 'Nøøn Gamer#3762 is my creator'.format(message)
           msg2 = await client.send_message(message.channel, msg)
          
       if 'hi <@515403515217313795>' in message.content:
