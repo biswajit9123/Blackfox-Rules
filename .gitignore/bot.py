@@ -99,7 +99,7 @@ async def on_message(message):
       return
     else:
       if message.content.startswith('^donate'):
-          msg = '**Support us by donating us;** https://www.paypal.me/RVerma181'
+          msg = '**Support us by donating us;** https://www.paypal.me/biswajit3663'
           await client.send_message(message.channel, msg)
           
       if 'Who is your creator <@515403515217313795>?' in message.content:
