@@ -148,8 +148,32 @@ async def on_message(message):
           
       if 'I am also fine <@515403515217313795>' in message.content:
           msg = 'Cool! {}'.format(message.author.name)
-          msg2 = await client.send_message(message.channel, msg)          
+          msg2 = await client.send_message(message.channel, msg)   
          
+       if 'good night <@515403515217313795>' in message.content:
+          msg = 'Good night {}'.format(message.author.name)
+          msg2 = await client.send_message(message.channel, msg)
+
+      if 'Good night <@515403515217313795>' in message.content:
+          msg = 'Giid night {}'.format(message.author.name)
+          msg2 = await client.send_message(message.channel, msg)
+
+      if 'Good morning <@515403515217313795>' in message.content:
+          msg = 'Good Morning {}'.format(message.author.name)
+          msg2 = await client.send_message(message.channel, msg)
+
+      if 'good morning <@515403515217313795>' in message.content:
+          msg = 'Good Morning {}'.format(message.author.name)
+          msg2 = await client.send_message(message.channel, msg)
+
+      if 'Good afternoon <@515403515217313795>' in message.content:
+          msg = 'Good afternoon {}'.format(message.author.name)
+          msg2 = await client.send_message(message.channel, msg)
+
+      if 'good afternoon <@515403515217313795>' in message.content:
+          msg = 'Good afternoon {}'.format(message.author.name)
+          msg2 = await client.send_message(message.channel, msg)
+            
       if 'i am also fine <@515403515217313795>' in message.content:
           msg = 'Cool! {}'.format(message.author.name)
           msg2 = await client.send_message(message.channel, msg)          
