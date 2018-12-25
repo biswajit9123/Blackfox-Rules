@@ -375,5 +375,46 @@ async def on_message(message):
                 embed.add_field(name = 'Channel:',value ='{}'.format(message.channel.name),inline = False)
                 embed.add_field(name = 'Message:',value ='{}'.format(message.content),inline = False)
                 await client.send_message(channel, embed=embed)
-        
+                
+   @commands.command(pass_context=True, no_pm=False)
+    async def ass(self, ctx):
+        """Shows some ass."""
+        author = ctx.message.author
+        dis_nsfw = None
+        for a in self.settings["nsfw_channels"]:
+            if a == ctx.message.channel.id:
+                if self.settings["invert"]:
+                    dis_nsfw = False
+                else:
+                    dis_nsfw = True
+                break
+        if dis_nsfw is None and not self.settings["invert"]:
+            dis_nsfw = False
+        else:
+            dis_nsfw = True
+
+        try:
+            rdm = random.randint(0, self.settings["ama_ass"])
+            search = ("http://api.obutts.ru/butts/{}".format(rdm))
+            async with aiohttp.get(search) as r:
+                result = await r.json()
+                ass = random.choice(result)
+                ass = "http://media.obutts.ru/{}".format(ass["preview"])
+        except Exception as e:
+            await self.bot.reply("Error getting results.")
+            return
+        if not dis_nsfw:
+            colour = ''.join([randchoice('0123456789ABCDEF') for x in range(6)])
+            colour = int(colour, 16)
+            embed=discord.Embed(colour=discord.Colour(value=colour))
+            embed.set_image(url=ass)
+            embed.set_author(name="Ass", url=ass, icon_url=self.bot.user.avatar_url)
+            await self.bot.say(embed=embed)
+            #await self.bot.say("{}".format(ass))
+        else:
+            pass                
+ 
+ 
+ 
+ 
 client.run(os.getenv('Token'))
