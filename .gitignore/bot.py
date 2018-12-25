@@ -376,8 +376,9 @@ async def on_message(message):
                 embed.add_field(name = 'Message:',value ='{}'.format(message.content),inline = False)
                 await client.send_message(channel, embed=embed)
                 
-   @commands.command(pass_context=True, no_pm=False)
-    async def ass(self, ctx):
+          
+@commands.command(pass_context=True, no_pm=False)
+async def ass(self, ctx):
         """Shows some ass."""
         author = ctx.message.author
         dis_nsfw = None
