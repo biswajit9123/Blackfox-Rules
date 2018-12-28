@@ -101,7 +101,15 @@ async def on_message(message):
       if message.content.startswith('^donate'):
           msg = '**Support us by donating us;** https://www.paypal.me/biswajit3663'
           await client.send_message(message.channel, msg)
-          
+      
+      if message.server.id == '519451035836874763' and 'https://' in message.content:
+          await client.delete_message(message)
+          await client.send_message(message.channel, f'Do not post link {message.author.name}')
+
+      if message.server.id == '519451035836874763' and ':http://' in message.content:
+          await client.delete_message(message)
+          await client.send_message(message.channel, f'Do not post link {message.author.name}')
+             
       if 'Who is your creator <@519200090770898945>?' in message.content:
           msg = 'Nøøb Gamer#3762 is my creator'.format(message)
           msg2 = await client.send_message(message.channel, msg)
