@@ -43,7 +43,7 @@ async def on_message_edit(before, after):
  
 @client.event
 async def on_member_join(member):
-    role = discord.utils.get(member.server.roles, name='-Guest-')
+    role = discord.utils.get(member.server.roles, name='-Blackfox Guest-')
     await client.add_roles(member, role)
  
 @client.event
