@@ -42,11 +42,6 @@ async def on_message_edit(before, after):
             await client.send_message(channel, embed=embed)
  
 @client.event
-async def on_member_join(member):
-    role = discord.utils.get(member.server.roles, name='-Blackfox Guest-')
-    await client.add_roles(member, role)
- 
-@client.event
 async def on_message_delete(message):
     if not message.author.bot:
       channelname = '╰☆☆-blackfox-log-☆☆╮'
