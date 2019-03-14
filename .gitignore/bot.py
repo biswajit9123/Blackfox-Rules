@@ -104,7 +104,7 @@ async def on_message(message):
       return
     else:
       if message.content.startswith('^donate'):
-          msg = '**Support us by donating us;** https://www.paypal.me/biswajit3663'
+          msg = '**Support us by donating us;** https://www.paypal.me/noobgamer1'
           await client.send_message(message.channel, msg)
       
       if message.server.id == '519451035836874763' and 'https://' in message.content:
